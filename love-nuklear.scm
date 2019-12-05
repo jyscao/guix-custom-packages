@@ -1,9 +1,8 @@
 (define-module (love-nuklear)
                #:use-module (guix packages)
-               #:use-module (guix download)
+               #:use-module (guix git-download)
                #:use-module (guix build-system cmake)
                #:use-module (guix licenses)
-               #:use-module (guix git-download)
                #:use-module (gnu packages lua))
 
 (define-public love-nuklear
