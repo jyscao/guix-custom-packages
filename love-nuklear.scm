@@ -24,16 +24,7 @@
    (build-system cmake-build-system)
    (arguments
     `(#:build-type "Release"
-      #:tests? #f
-      #:phases
-      (modify-phases %standard-phases
-       (replace 'install
-        (lambda* (#:key outputs #:allow-other-keys)
-                 (let* ((out (assoc-ref outputs "out"))
-                        (share (string-append out "/share")))
-                       (install-file "nuklear.so" share)
-                       #t))))
-      ))
+      #:tests? #f))
    (inputs
     `(("luajit" ,luajit)))
    (synopsis "Nuklear module for the LÖVE game engine")
