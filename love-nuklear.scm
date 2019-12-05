@@ -9,7 +9,7 @@
 (define-public love-nuklear
  (let ((commit "fef4e00a602efb16c57ae962850b6e7a01f7a29a")
        (srchash "15qmy8mfwkxy2x9rmxs6f9cyvjvwwj6yf78bs863xmc56dmjzzbn")
-       (revision "0"))
+       (revision "+4commits"))
   (package
    (name "love-nuklear")
    (version (git-version "v2.6" revision commit))
