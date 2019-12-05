@@ -46,12 +46,3 @@
 
 
 love-nuklear
-
-; ;; using git-fetch; could not get consistent hash when doing `$ guix download ...`
-; (method git-fetch)
-; (uri (git-reference
-;       (url "https://github.com/keharriso/love-nuklear/")
-;       (commit "0cca218ac72f71c39130277dac1a6d1c9aceef69")))
-; (sha256
-;  (base32 "1z1db35zagdaky987188j12lqhiqqldmqiy9p5rh08f8ckq8jk3h"))))
-;   ;; PROBLEM: the hash changes on every run of `$ guix download "https://github.com/keharriso/love-nuklear"`
