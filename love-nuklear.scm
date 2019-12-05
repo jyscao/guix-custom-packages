@@ -4,7 +4,6 @@
                #:use-module (guix build-system cmake)
                #:use-module (guix licenses)
                #:use-module (guix git-download)
-               ; #:use-module (guix gexp)
                #:use-module (gnu packages lua))
 
 (define-public love-nuklear
@@ -13,10 +12,6 @@
   (package
    (name "love-nuklear")
    (version (git-version "v2.6" revision commit))
-   ; (source
-   ;  (local-file
-   ;    "/home/jyscao/guix_custom_packages/love-nuklear-test/love-nuklear"
-   ;    #:recursive? #t))
    (source (origin
             (method git-fetch)
             (uri (git-reference
