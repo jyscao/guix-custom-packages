@@ -7,7 +7,7 @@
                #:use-module (gnu packages lua))
 
 (define-public love-nuklear
- (let ((commit "0cca218ac72f71c39130277dac1a6d1c9aceef69")
+ (let ((commit "fef4e00a602efb16c57ae962850b6e7a01f7a29a")
        (revision "0"))
   (package
    (name "love-nuklear")
@@ -20,7 +20,7 @@
                   (recursive? #t)))
             (file-name (git-file-name name version))
             (sha256
-             (base32 "0qidw091n1780kbxj2ddjpic6l24p7b16bk1b4xyqha1swfn7w32"))))
+             (base32 "15qmy8mfwkxy2x9rmxs6f9cyvjvwwj6yf78bs863xmc56dmjzzbn"))))
    (build-system cmake-build-system)
    (arguments
     `(#:build-type "Release"
