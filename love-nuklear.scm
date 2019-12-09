@@ -16,6 +16,7 @@
       ((string=? revision "")      (string-append version "-" (string-take commit 7)))
       ((string= revision "+" 0 1)  (string-append version revision "." (string-take commit 7)))
       (#t (git-version version revision commit))))
+(define-public love-nuklear-2.6
  (let ((version "v2.6")
        (commit "fef4e00a602efb16c57ae962850b6e7a01f7a29a"))
   (package
@@ -41,9 +42,9 @@
    (inputs
     `(("luajit" ,luajit)))
    (synopsis "Nuklear module for the LÖVE game engine")
-   (description "LÖVE is a Lua framework for making 2D games. 
-    Nuklear is a minimal state immediate mode graphical user interface toolkit. 
-    This package is for the Nuklear bindings in LÖVE created by Kevin Harrison.")
+   (description "LÖVE is a Lua framework for making 2D games. Nuklear
+is a minimal state immediate mode graphical user interface toolkit. This
+package is the Nuklear bindings in LÖVE created by Kevin Harrison.")
    (home-page "https://github.com/keharriso/love-nuklear/")
    (license expat))))
 (define-public love-nuklear-2.5.2
@@ -72,3 +73,4 @@
 
 ; love-nuklear
 ; love-nuklear-2.5.2
+love-nuklear-2.6
