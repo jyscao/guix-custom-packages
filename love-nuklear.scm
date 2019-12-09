@@ -16,9 +16,11 @@
       ((string=? revision "")      (string-append version "-" (string-take commit 7)))
       ((string= revision "+" 0 1)  (string-append version revision "." (string-take commit 7)))
       (#t (git-version version revision commit))))
+ (let ((version "v2.6")
+       (commit "fef4e00a602efb16c57ae962850b6e7a01f7a29a"))
   (package
    (name "love-nuklear")
-   (version (git-version "v2.6" revision commit))
+   (version (git-version version "+4commits" commit))
    (source (origin
             (method git-fetch)
             (uri (git-reference
@@ -29,7 +31,9 @@
                   ;; TODO: package Nuklear, and explicitly specify it as a native (build) input
                   ))
             (file-name (git-file-name name version))
-            (sha256 (base32 srchash))))
+            (sha256 
+             (base32 
+              "15qmy8mfwkxy2x9rmxs6f9cyvjvwwj6yf78bs863xmc56dmjzzbn"))))
    (build-system cmake-build-system)
    (arguments
     `(#:build-type "Release"
