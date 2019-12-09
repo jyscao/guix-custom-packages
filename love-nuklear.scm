@@ -24,7 +24,10 @@
             (uri (git-reference
                   (url "https://github.com/keharriso/love-nuklear/")
                   (commit commit)
-                  (recursive? #t)))
+                  (recursive? #t) 
+                  ;; NOTE: the Nuklear submodule's HEAD is at commit "adc52d7" of Oct 1 2019
+                  ;; TODO: package Nuklear, and explicitly specify it as a native (build) input
+                  ))
             (file-name (git-file-name name version))
             (sha256 (base32 srchash))))
    (build-system cmake-build-system)
