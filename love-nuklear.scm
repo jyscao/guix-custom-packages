@@ -5,10 +5,17 @@
                #:use-module (guix licenses)
                #:use-module (gnu packages lua))
 
-(define-public love-nuklear
- (let ((commit "fef4e00a602efb16c57ae962850b6e7a01f7a29a")
-       (srchash "15qmy8mfwkxy2x9rmxs6f9cyvjvwwj6yf78bs863xmc56dmjzzbn")
-       (revision "+4commits"))
+
+
+;; procedure that formats the versioning part of the filename
+;; differently depending on the revision argument
+;; ---> not all that useful
+(define (git-version2 version revision commit)
+  "Return the version string for packages using git-download."
+  (cond
+      ((string=? revision "")      (string-append version "-" (string-take commit 7)))
+      ((string= revision "+" 0 1)  (string-append version revision "." (string-take commit 7)))
+      (#t (git-version version revision commit))))
   (package
    (name "love-nuklear")
    (version (git-version "v2.6" revision commit))
