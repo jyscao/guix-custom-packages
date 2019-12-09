@@ -47,10 +47,10 @@
       #:tests? #f))
    (inputs
     `(("luajit" ,luajit)))
-   (synopsis "Nuklear module for the LÖVE game engine")
+   (synopsis "Lightweight immediate mode GUI for LÖVE games")
    (description "LÖVE is a Lua framework for making 2D games. Nuklear
 is a minimal state immediate mode graphical user interface toolkit. This
-package is the Nuklear bindings in LÖVE created by Kevin Harrison.")
+package is the Nuklear bindings for LÖVE created by Kevin Harrison.")
    (home-page "https://github.com/keharriso/love-nuklear/")
    (license expat))))
 ;; --------------------------------------------------
