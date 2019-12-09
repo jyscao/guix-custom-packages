@@ -22,7 +22,7 @@
 ;; --------------------------------------------------
 ;; the below is the package definitin to submit to Guix
 ;; --------------------------------------------------
-(define-public love-nuklear-2.6
+(define-public love-nuklear
  (let ((version "v2.6")
        (commit "fef4e00a602efb16c57ae962850b6e7a01f7a29a"))
   (package
