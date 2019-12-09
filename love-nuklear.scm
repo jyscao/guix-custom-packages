@@ -2,8 +2,8 @@
                #:use-module (guix packages)
                #:use-module (guix git-download)
                #:use-module (guix build-system cmake)
-               #:use-module (gnu packages lua))
-               #:use-module ((guix licenses) #:prefix license:)
+               #:use-module (gnu packages lua)
+               #:use-module ((guix licenses) #:prefix license:))
 
 
 
@@ -60,30 +60,29 @@ package is the Nuklear bindings for LÖVE created by Kevin Harrison.")
 
 
 
-(define-public love-nuklear-2.5.2
-  (package
-    (inherit love-nuklear-2.6)
-    ; (name "love-nuklear")
-    (version (git-version2 "2.5.2" "" "bf89bf9f088cfeba218bbcf494bd6d1cf0e72c29"))
-    (source (origin
-              (inherit (package-source love-nuklear-2.6))
-              (uri (git-reference
-                     (url "https://github.com/keharriso/love-nuklear/")
-                     (commit  "bf89bf9f088cfeba218bbcf494bd6d1cf0e72c29")
-                     (recursive? #t)))
-              (file-name (git-file-name "love-nuklear" "2.5.2"))
-              (sha256 (base32  "188hvcapp0ggsbkimdbx7i9g2151ay5p9l10678lppyj74xqhhxa"))
-              ;; NOTE: need Nuklear submodule's HEAD to be at commit
-              ;; "181cfd8" of Nov 2 2018 to produce source hash above
-            ))))
-;; NOTE: building using definition above still fails due to older
-;; versions of love-nuklear not having an install target for make.
-;; But the inheritance usage should be correct
+; (define-public love-nuklear-2.5.2
+;   (package
+;     (inherit love-nuklear-2.6)
+;     ; (name "love-nuklear")
+;     (version (git-version2 "2.5.2" "" "bf89bf9f088cfeba218bbcf494bd6d1cf0e72c29"))
+;     (source (origin
+;               (inherit (package-source love-nuklear-2.6))
+;               (uri (git-reference
+;                      (url "https://github.com/keharriso/love-nuklear/")
+;                      (commit  "bf89bf9f088cfeba218bbcf494bd6d1cf0e72c29")
+;                      (recursive? #t)))
+;               (file-name (git-file-name "love-nuklear" "2.5.2"))
+;               (sha256 (base32  "188hvcapp0ggsbkimdbx7i9g2151ay5p9l10678lppyj74xqhhxa"))
+;               ;; NOTE: need Nuklear submodule's HEAD to be at commit
+;               ;; "181cfd8" of Nov 2 2018 to produce source hash above
+;             ))))
+; ;; NOTE: building using definition above still fails due to older
+; ;; versions of love-nuklear not having an install target for make.
+; ;; But the inheritance usage should be correct
 
 
 
 
 
-; love-nuklear
+love-nuklear
 ; love-nuklear-2.5.2
-love-nuklear-2.6
