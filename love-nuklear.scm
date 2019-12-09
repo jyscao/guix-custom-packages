@@ -2,8 +2,8 @@
                #:use-module (guix packages)
                #:use-module (guix git-download)
                #:use-module (guix build-system cmake)
-               #:use-module (guix licenses)
                #:use-module (gnu packages lua))
+               #:use-module ((guix licenses) #:prefix license:)
 
 
 
@@ -52,7 +52,7 @@
 is a minimal state immediate mode graphical user interface toolkit. This
 package is the Nuklear bindings for LÖVE created by Kevin Harrison.")
    (home-page "https://github.com/keharriso/love-nuklear/")
-   (license expat))))
+   (license license:expat))))
 ;; --------------------------------------------------
 ;; TODO: confirm built nuklear.so works as expected in pure Guix environment
 ;;       figure out how to contribute to Guix 
