@@ -19,9 +19,6 @@
 
 
 
-;; --------------------------------------------------
-;; the below is the package definitin to submit to Guix
-;; --------------------------------------------------
 (define-public love-nuklear
  (let ((version "v2.6")
        (commit "fef4e00a602efb16c57ae962850b6e7a01f7a29a"))
@@ -33,30 +30,26 @@
             (uri (git-reference
                   (url "https://github.com/keharriso/love-nuklear/")
                   (commit commit)
-                  (recursive? #t) 
-                  ;; NOTE: the Nuklear submodule's HEAD is at commit "adc52d7" of Oct 1 2019
-                  ;; TODO: package Nuklear, and explicitly specify it as a native (build) input
-                  ))
+                  (recursive? #t)))
+            ;; NOTE: the Nuklear submodule's HEAD is at commit "adc52d7" of Oct 1 2019
+            ;; TODO: package Nuklear, and explicitly specify it as a native (build) input
             (file-name (git-file-name name version))
-            (sha256 
-             (base32 
+            (sha256
+             (base32
               "15qmy8mfwkxy2x9rmxs6f9cyvjvwwj6yf78bs863xmc56dmjzzbn"))))
    (build-system cmake-build-system)
    (arguments
     `(#:build-type "Release"
-      #:tests? #f))
+      #:tests? #f))    ;; TODO: add tests to love-nuklear?
    (inputs
     `(("luajit" ,luajit)))
+   ;; TODO: add love as a propagated dependency?
    (synopsis "Lightweight immediate mode GUI for LÖVE games")
-   (description "LÖVE is a Lua framework for making 2D games. Nuklear
-is a minimal state immediate mode graphical user interface toolkit. This
+   (description "LÖVE is a Lua framework for making 2D games.  Nuklear
+is a minimal state immediate mode graphical user interface toolkit.  This
 package is the Nuklear bindings for LÖVE created by Kevin Harrison.")
    (home-page "https://github.com/keharriso/love-nuklear/")
    (license license:expat))))
-;; --------------------------------------------------
-;; TODO: confirm built nuklear.so works as expected in pure Guix environment
-;;       figure out how to contribute to Guix 
-;; --------------------------------------------------
 
 
 
